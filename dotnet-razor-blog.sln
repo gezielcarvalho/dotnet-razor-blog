@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35222.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotnet-razor-blog", "dotnet-razor-blog.csproj", "{D44702AE-C151-408B-B8E5-D22B1DFE2247}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D44702AE-C151-408B-B8E5-D22B1DFE2247}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D44702AE-C151-408B-B8E5-D22B1DFE2247}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D44702AE-C151-408B-B8E5-D22B1DFE2247}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D44702AE-C151-408B-B8E5-D22B1DFE2247}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F3B06BFC-95FB-4FBB-99F8-A1E0529DF5F1}
+	EndGlobalSection
+EndGlobal
