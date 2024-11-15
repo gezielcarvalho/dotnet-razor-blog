@@ -39,7 +39,7 @@ namespace dotnet_razor_blog.Pages.Admin.BlogPosts
                 Visible = AddBlogPostRequest.IsVisible
             });
             _context.SaveChanges();
-            return RedirectToPage("Add");
+            return RedirectToPage("List");
         }
     }
 }
