@@ -5,20 +5,14 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace dotnet_razor_blog.Pages.Admin.BlogPosts
 {
-    public class EditModel : PageModel
+    public class EditModel(AppDbContext context) : PageModel
     {
-        private readonly AppDbContext _context;
-
         [BindProperty]
         public BlogPost? BlogPost { get; set; }
 
-        public EditModel(AppDbContext context)
-        {
-            _context = context;
-        }
         public void OnGet(Guid Id)
         {
-            BlogPost = _context.BlogPosts.Find(Id);
+            BlogPost = context.BlogPosts.Find(Id);
         }
 
         public IActionResult OnPost()
@@ -27,8 +21,8 @@ namespace dotnet_razor_blog.Pages.Admin.BlogPosts
             {
                 return Page();
             }
-            _context.BlogPosts.Update(BlogPost);
-            _context.SaveChanges();
+            context.BlogPosts.Update(BlogPost);
+            context.SaveChanges();
             return RedirectToPage("List");
         }
     }

@@ -5,21 +5,14 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace dotnet_razor_blog.Pages.Admin.BlogPosts
 {
-    public class DeleteModel : PageModel
+    public class DeleteModel(AppDbContext context) : PageModel
     {
-        private readonly AppDbContext _context;
-
-        public DeleteModel(AppDbContext context)
-        {
-            _context = context;
-        }
-
         [BindProperty]
         public BlogPost? BlogPost { get; set; }
 
         public IActionResult OnGet(Guid id)
         {
-            BlogPost = _context.BlogPosts.Find(id);
+            BlogPost = context.BlogPosts.Find(id);
             if (BlogPost == null)
             {
                 return RedirectToPage("List"); // Redirect if not found
@@ -29,14 +22,14 @@ namespace dotnet_razor_blog.Pages.Admin.BlogPosts
 
         public IActionResult OnPost(Guid id)
         {
-            BlogPost = _context.BlogPosts.Find(id);
+            BlogPost = context.BlogPosts.Find(id);
             if (BlogPost == null)
             {
                 return RedirectToPage("List"); // Redirect if not found
             }
 
-            _context.BlogPosts.Remove(BlogPost);
-            _context.SaveChanges();
+            context.BlogPosts.Remove(BlogPost);
+            context.SaveChanges();
             return RedirectToPage("List");
         }
     }

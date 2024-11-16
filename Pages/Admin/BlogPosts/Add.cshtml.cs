@@ -6,16 +6,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace dotnet_razor_blog.Pages.Admin.BlogPosts
 {
-    public class AddModel : PageModel
+    public class AddModel(AppDbContext context) : PageModel
     {
         [BindProperty]
-        public AddBlogPost AddBlogPostRequest { get; set; }
+        public AddBlogPost? AddBlogPostRequest { get; set; }
 
-        private readonly AppDbContext _context;
-        public AddModel(AppDbContext context)
-        {
-            _context = context;
-        }
         public void OnGet()
         {
         }
@@ -26,7 +21,11 @@ namespace dotnet_razor_blog.Pages.Admin.BlogPosts
             {
                 return Page();
             }
-            _context.BlogPosts.Add(new BlogPost
+            if (AddBlogPostRequest == null)
+            {
+                return Page();
+            }
+            context.BlogPosts.Add(new BlogPost
             {
                 Author = AddBlogPostRequest.Author,
                 Content = AddBlogPostRequest.Content,
@@ -38,7 +37,7 @@ namespace dotnet_razor_blog.Pages.Admin.BlogPosts
                 UrlHandle = AddBlogPostRequest.UrlHandle,
                 Visible = AddBlogPostRequest.IsVisible
             });
-            _context.SaveChanges();
+            context.SaveChanges();
             return RedirectToPage("List");
         }
     }

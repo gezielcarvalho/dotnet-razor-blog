@@ -5,17 +5,13 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace dotnet_razor_blog.Pages.Admin.BlogPosts
 {
-    public class ListModel : PageModel
+    public class ListModel(AppDbContext context) : PageModel
     {
-        private readonly AppDbContext _context;
-        public List<BlogPost> BlogPosts { get; set; }
-        public ListModel(AppDbContext context)
-        {
-            _context = context;
-        }
+        public List<BlogPost>? BlogPosts { get; set; }
+
         public void OnGet()
         {
-            BlogPosts = _context.BlogPosts.ToList();
+            BlogPosts = [.. context.BlogPosts];
         }
     }
 }
