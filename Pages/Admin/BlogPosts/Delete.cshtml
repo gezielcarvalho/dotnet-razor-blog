@@ -1,0 +1,17 @@
+﻿@page "{Id:Guid}"
+@model dotnet_razor_blog.Pages.Admin.BlogPosts.DeleteModel
+@{
+    ViewData["Title"] = "Delete Blog Post";
+}
+
+<div class="container mt-4">
+    <h1>Are you sure you want to delete this blog post?</h1>
+    <p><strong>Heading:</strong> @Model.BlogPost?.Heading</p>
+    <p><strong>Author:</strong> @Model.BlogPost?.Author</p>
+
+    <form method="post">
+        <input type="hidden" asp-for="BlogPost.Id" />
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a asp-page="List" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
