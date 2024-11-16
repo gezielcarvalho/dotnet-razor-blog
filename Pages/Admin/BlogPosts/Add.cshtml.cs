@@ -15,7 +15,7 @@ namespace dotnet_razor_blog.Pages.Admin.BlogPosts
         {
         }
 
-        public IActionResult OnPost()
+        public async Task<IActionResult> OnPost()
         {
             if (!ModelState.IsValid)
             {
@@ -37,7 +37,7 @@ namespace dotnet_razor_blog.Pages.Admin.BlogPosts
                 UrlHandle = AddBlogPostRequest.UrlHandle,
                 Visible = AddBlogPostRequest.IsVisible
             });
-            context.SaveChanges();
+            await context.SaveChangesAsync();
             return RedirectToPage("List");
         }
     }

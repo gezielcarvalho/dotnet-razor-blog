@@ -1,7 +1,7 @@
 using dotnet_razor_blog.Data;
 using dotnet_razor_blog.Models.Domain;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 
 namespace dotnet_razor_blog.Pages.Admin.BlogPosts
 {
@@ -9,9 +9,9 @@ namespace dotnet_razor_blog.Pages.Admin.BlogPosts
     {
         public List<BlogPost>? BlogPosts { get; set; }
 
-        public void OnGet()
+        public async Task OnGet()
         {
-            BlogPosts = [.. context.BlogPosts];
+            BlogPosts = await context.BlogPosts.ToListAsync();
         }
     }
 }

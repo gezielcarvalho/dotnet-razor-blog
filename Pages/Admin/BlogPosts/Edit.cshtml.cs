@@ -10,19 +10,19 @@ namespace dotnet_razor_blog.Pages.Admin.BlogPosts
         [BindProperty]
         public BlogPost? BlogPost { get; set; }
 
-        public void OnGet(Guid Id)
+        public async Task OnGet(Guid Id)
         {
-            BlogPost = context.BlogPosts.Find(Id);
+            BlogPost = await context.BlogPosts.FindAsync(Id);
         }
 
-        public IActionResult OnPost()
+        public async Task<IActionResult> OnPost()
         {
             if (BlogPost == null || !ModelState.IsValid)
             {
                 return Page();
             }
             context.BlogPosts.Update(BlogPost);
-            context.SaveChanges();
+            await context.SaveChangesAsync();
             return RedirectToPage("List");
         }
     }

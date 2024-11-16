@@ -10,26 +10,27 @@ namespace dotnet_razor_blog.Pages.Admin.BlogPosts
         [BindProperty]
         public BlogPost? BlogPost { get; set; }
 
-        public IActionResult OnGet(Guid id)
+        public async Task<IActionResult> OnGet(Guid id)
         {
-            BlogPost = context.BlogPosts.Find(id);
+            BlogPost = await context.BlogPosts.FindAsync(id);
             if (BlogPost == null)
             {
                 return RedirectToPage("List"); // Redirect if not found
             }
+
             return Page();
         }
 
-        public IActionResult OnPost(Guid id)
+        public async Task<IActionResult> OnPost(Guid id)
         {
-            BlogPost = context.BlogPosts.Find(id);
+            BlogPost = await context.BlogPosts.FindAsync(id);
             if (BlogPost == null)
             {
                 return RedirectToPage("List"); // Redirect if not found
             }
 
             context.BlogPosts.Remove(BlogPost);
-            context.SaveChanges();
+            await context.SaveChangesAsync();
             return RedirectToPage("List");
         }
     }
