@@ -3,6 +3,11 @@
 @{
     ViewData["Title"] = "Edit a blog post";
 }
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">Please resolve the reCAPTCHA challenge.</div>
+}
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <div class="bg-secondary bg-opacity-10 py-2">
     <div class="container">
         <h1>Edit a blog post</h1>
@@ -11,6 +16,7 @@
 <div>
     <div class="container">
        <form  method="post">
+           <div class="g-recaptcha" data-sitekey="your-site-key"></div>
           <div class="mb-3">
             <label for="id" class="form-label">Id</label>
             <input type="text" readonly class="form-control" id="id" asp-for="BlogPost.Id">
