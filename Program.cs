@@ -1,4 +1,5 @@
 using dotnet_razor_blog.Data;
+using dotnet_razor_blog.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace dotnet_razor_blog
@@ -8,6 +9,9 @@ namespace dotnet_razor_blog
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            // Bind Recaptcha settings
+            builder.Services.Configure<RecaptchaSettings>(builder.Configuration.GetSection("Recaptcha"));
 
             // Add services to the container.
             builder.Services.AddRazorPages();

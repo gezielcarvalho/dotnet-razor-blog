@@ -3,11 +3,12 @@ using dotnet_razor_blog.Models;
 using dotnet_razor_blog.Models.Domain;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Options;
 using System.Text.Json;
 
 namespace dotnet_razor_blog.Pages.Admin.BlogPosts
 {
-    public class EditModel(AppDbContext context) : PageModel
+    public class EditModel(AppDbContext context, IOptions<RecaptchaSettings> recaptchaSettings) : PageModel
     {
         [BindProperty]
         public BlogPost? BlogPost { get; set; }
@@ -21,7 +22,7 @@ namespace dotnet_razor_blog.Pages.Admin.BlogPosts
         {
             // Extract reCAPTCHA response token from the form submission
             var recaptchaResponse = Request.Form["g-recaptcha-response"];
-            var secretKey = "your-secret-key"; // Replace with your secret key
+            var secretKey = recaptchaSettings.Value.SecretKey;
 
             // Send the response to Google for validation
             using var httpClient = new HttpClient();
