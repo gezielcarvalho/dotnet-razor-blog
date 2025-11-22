@@ -112,27 +112,27 @@
       }
     },
     {
-      "label": "docker-compose-up",
+      "label": "docker compose-up",
       "type": "shell",
-      "command": "docker-compose up -d",
+      "command": "docker compose up -d",
       "problemMatcher": []
     },
     {
-      "label": "docker-compose-down",
+      "label": "docker compose-down",
       "type": "shell",
-      "command": "docker-compose down",
+      "command": "docker compose down",
       "problemMatcher": []
     },
     {
-      "label": "docker-compose-up-debug",
+      "label": "docker compose-up-debug",
       "type": "shell",
-      "command": "docker-compose -f docker-compose.debug.yml up -d",
+      "command": "docker compose -f docker compose.debug.yml up -d",
       "problemMatcher": []
     },
     {
-      "label": "docker-compose-down-debug",
+      "label": "docker compose-down-debug",
       "type": "shell",
-      "command": "docker-compose -f docker-compose.debug.yml down",
+      "command": "docker compose -f docker compose.debug.yml down",
       "problemMatcher": []
     }
   ]

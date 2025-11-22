@@ -113,13 +113,13 @@ chmod +x scripts/start-docker.sh
 
 ```bash
 # Start the application and database
-docker-compose up -d
+docker compose up -d
 
 # View logs
-docker-compose logs -f
+docker compose logs -f
 
 # Stop the application
-docker-compose down
+docker compose down
 ```
 
 The application will be available at http://localhost:5151
@@ -206,10 +206,10 @@ You can set breakpoints in your code, and they will work seamlessly inside the c
 - **watch** - Run with hot reload
 - **docker-build: debug** - Build debug Docker image
 - **docker-build: release** - Build production Docker image
-- **docker-compose-up** - Start with docker-compose
-- **docker-compose-down** - Stop docker-compose
-- **docker-compose-up-debug** - Start debug environment
-- **docker-compose-down-debug** - Stop debug environment
+- **docker compose-up** - Start with docker compose
+- **docker compose-down** - Stop docker compose
+- **docker compose-up-debug** - Start debug environment
+- **docker compose-down-debug** - Stop debug environment
 
 ## Docker Information
 
@@ -217,8 +217,8 @@ You can set breakpoints in your code, and they will work seamlessly inside the c
 
 - **Dockerfile** - Production-optimized multi-stage build
 - **Dockerfile.debug** - Development image with debugging tools
-- **docker-compose.yml** - Production environment setup
-- **docker-compose.debug.yml** - Debug environment with volume mounting
+- **docker compose.yml** - Production environment setup
+- **docker compose.debug.yml** - Debug environment with volume mounting
 - **.dockerignore** - Files excluded from Docker builds
 
 ### Docker Images Used
@@ -229,7 +229,7 @@ You can set breakpoints in your code, and they will work seamlessly inside the c
 
 ### Environment Variables
 
-The Docker setup uses these environment variables (configured in docker-compose.yml):
+The Docker setup uses these environment variables (configured in docker compose.yml):
 
 ```env
 ASPNETCORE_ENVIRONMENT=Development
@@ -258,7 +258,7 @@ docker ps
 docker logs dotnet-razor-blog
 
 # Stop and remove containers
-docker-compose down -v
+docker compose down -v
 ```
 
 ## Development
