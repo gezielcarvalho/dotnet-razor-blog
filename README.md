@@ -1,6 +1,6 @@
-# .NET Razor Blog
+# CMS .NET Razor
 
-A modern blog application built with ASP.NET Core 8.0 and Razor Pages. This application provides a complete blogging platform with an admin interface for managing blog posts.
+A modern Content Management System (CMS) built with ASP.NET Core 8.0 and Razor Pages. This application provides a complete blogging platform with an admin interface for managing blog posts, with plans to evolve into a full-featured CMS.
 
 ## Features
 
@@ -217,8 +217,8 @@ You can set breakpoints in your code, and they will work seamlessly inside the c
 
 - **Dockerfile** - Production-optimized multi-stage build
 - **Dockerfile.debug** - Development image with debugging tools
-- **docker compose.yml** - Production environment setup
-- **docker compose.debug.yml** - Debug environment with volume mounting
+- **docker-compose.yml** - Production environment setup
+- **docker-compose.debug.yml** - Debug environment with volume mounting
 - **.dockerignore** - Files excluded from Docker builds
 
 ### Docker Images Used
@@ -229,7 +229,7 @@ You can set breakpoints in your code, and they will work seamlessly inside the c
 
 ### Environment Variables
 
-The Docker setup uses these environment variables (configured in docker compose.yml):
+The Docker setup uses these environment variables (configured in docker-compose.yml):
 
 ```env
 ASPNETCORE_ENVIRONMENT=Development
