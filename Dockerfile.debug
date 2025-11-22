@@ -1,0 +1,26 @@
+# Debug Dockerfile for development with VSCode debugging support
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
+
+# Install debugger
+RUN apt-get update && apt-get install -y unzip && \
+    curl -sSL https://aka.ms/getvsdbgsh | bash /dev/stdin -v latest -l /vsdbg
+
+# Copy csproj and restore dependencies
+COPY ["dotnet-razor-blog.csproj", "./"]
+RUN dotnet restore "dotnet-razor-blog.csproj"
+
+# Copy everything else
+COPY . .
+
+# Set environment for debugging
+ENV ASPNETCORE_ENVIRONMENT=Development
+ENV ASPNETCORE_URLS=http://+:8080
+
+EXPOSE 8080
+
+# Build in Debug mode and run with debugger support
+RUN dotnet build "dotnet-razor-blog.csproj" -c Debug -o /app/build
+
+WORKDIR /app/build
+ENTRYPOINT ["dotnet", "dotnet-razor-blog.dll"]
