@@ -1,5 +1,5 @@
 @echo off
-echo Starting dotnet-razor-blog with Docker Compose...
+echo Starting cms-dotnet-razor with Docker Compose...
 docker compose up -d
 
 echo.

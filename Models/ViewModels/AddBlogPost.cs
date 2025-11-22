@@ -1,4 +1,4 @@
-﻿namespace dotnet_razor_blog.Models.ViewModels
+﻿namespace cms_dotnet_razor.Models.ViewModels
 {
     public class AddBlogPost
     {

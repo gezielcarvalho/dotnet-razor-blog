@@ -1,11 +1,11 @@
-version: '3.8'
+version: "3.8"
 
 services:
   web:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: dotnet-razor-blog
+    container_name: cms-dotnet-razor
     ports:
       - "5151:8080"
       - "7167:8081"

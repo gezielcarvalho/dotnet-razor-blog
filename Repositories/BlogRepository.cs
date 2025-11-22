@@ -1,8 +1,8 @@
-﻿using dotnet_razor_blog.Data;
-using dotnet_razor_blog.Models.Domain;
+﻿using cms_dotnet_razor.Data;
+using cms_dotnet_razor.Models.Domain;
 using Microsoft.EntityFrameworkCore;
 
-namespace dotnet_razor_blog.Repositories
+namespace cms_dotnet_razor.Repositories
 {
     public class BlogRepository : IBlogPostRepository
     {

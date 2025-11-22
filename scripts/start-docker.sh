@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Start the application with Docker Compose
-echo "Starting dotnet-razor-blog with Docker Compose..."
+echo "Starting cms-dotnet-razor with Docker Compose..."
 docker compose up -d
 
 echo ""

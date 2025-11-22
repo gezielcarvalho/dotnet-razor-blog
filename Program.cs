@@ -1,9 +1,9 @@
-using dotnet_razor_blog.Data;
-using dotnet_razor_blog.Models;
-using dotnet_razor_blog.Repositories;
+using cms_dotnet_razor.Data;
+using cms_dotnet_razor.Models;
+using cms_dotnet_razor.Repositories;
 using Microsoft.EntityFrameworkCore;
 
-namespace dotnet_razor_blog
+namespace cms_dotnet_razor
 {
     public class Program
     {

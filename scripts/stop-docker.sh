@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Stop the application
-echo "Stopping dotnet-razor-blog..."
+echo "Stopping cms-dotnet-razor..."
 docker compose down
 
 echo ""

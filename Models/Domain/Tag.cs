@@ -1,4 +1,4 @@
-﻿namespace dotnet_razor_blog.Models.Domain
+﻿namespace cms_dotnet_razor.Models.Domain
 {
     public class Tag
     {

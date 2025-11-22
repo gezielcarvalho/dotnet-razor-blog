@@ -1,7 +1,7 @@
-﻿using dotnet_razor_blog.Models.Domain;
+﻿using cms_dotnet_razor.Models.Domain;
 using Microsoft.EntityFrameworkCore;
 
-namespace dotnet_razor_blog.Data
+namespace cms_dotnet_razor.Data
 {
     public class AppDbContext : DbContext
     {

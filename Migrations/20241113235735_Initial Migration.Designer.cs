@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using dotnet_razor_blog.Data;
+using cms_dotnet_razor.Data;
 
 #nullable disable
 
-namespace dotnet_razor_blog.Migrations
+namespace cms_dotnet_razor.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     [Migration("20241113235735_Initial Migration")]
@@ -25,7 +25,7 @@ namespace dotnet_razor_blog.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("dotnet_razor_blog.Models.Domain.BlogPost", b =>
+            modelBuilder.Entity("cms_dotnet_razor.Models.Domain.BlogPost", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -70,7 +70,7 @@ namespace dotnet_razor_blog.Migrations
                     b.ToTable("BlogPosts");
                 });
 
-            modelBuilder.Entity("dotnet_razor_blog.Models.Domain.Tag", b =>
+            modelBuilder.Entity("cms_dotnet_razor.Models.Domain.Tag", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()

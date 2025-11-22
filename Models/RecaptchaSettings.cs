@@ -1,4 +1,4 @@
-﻿namespace dotnet_razor_blog.Models
+﻿namespace cms_dotnet_razor.Models
 {
     public class RecaptchaSettings
     {

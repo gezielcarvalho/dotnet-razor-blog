@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace dotnet_razor_blog.Migrations
+namespace cms_dotnet_razor.Migrations
 {
     /// <inheritdoc />
     public partial class InitialMigration : Migration

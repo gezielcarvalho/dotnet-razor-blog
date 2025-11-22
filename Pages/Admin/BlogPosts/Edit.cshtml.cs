@@ -1,13 +1,13 @@
-using dotnet_razor_blog.Data;
-using dotnet_razor_blog.Models;
-using dotnet_razor_blog.Models.Domain;
-using dotnet_razor_blog.Repositories;
+using cms_dotnet_razor.Data;
+using cms_dotnet_razor.Models;
+using cms_dotnet_razor.Models.Domain;
+using cms_dotnet_razor.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Options;
 using System.Text.Json;
 
-namespace dotnet_razor_blog.Pages.Admin.BlogPosts
+namespace cms_dotnet_razor.Pages.Admin.BlogPosts
 {
     public class EditModel(IOptions<RecaptchaSettings> recaptchaSettings, IBlogPostRepository repository) : PageModel
     {

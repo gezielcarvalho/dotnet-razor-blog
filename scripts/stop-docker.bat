@@ -1,5 +1,5 @@
 @echo off
-echo Stopping dotnet-razor-blog...
+echo Stopping cms-dotnet-razor...
 docker compose down
 
 echo.

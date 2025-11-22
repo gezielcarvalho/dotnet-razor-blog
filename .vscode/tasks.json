@@ -7,7 +7,7 @@
       "type": "process",
       "args": [
         "build",
-        "${workspaceFolder}/dotnet-razor-blog.csproj",
+        "${workspaceFolder}/cms-dotnet-razor.csproj",
         "/property:GenerateFullPaths=true",
         "/consoleloggerparameters:NoSummary"
       ],
@@ -19,7 +19,7 @@
       "type": "process",
       "args": [
         "publish",
-        "${workspaceFolder}/dotnet-razor-blog.csproj",
+        "${workspaceFolder}/cms-dotnet-razor.csproj",
         "/property:GenerateFullPaths=true",
         "/consoleloggerparameters:NoSummary"
       ],
@@ -33,7 +33,7 @@
         "watch",
         "run",
         "--project",
-        "${workspaceFolder}/dotnet-razor-blog.csproj"
+        "${workspaceFolder}/cms-dotnet-razor.csproj"
       ],
       "problemMatcher": "$msCompile"
     },
@@ -42,13 +42,13 @@
       "label": "docker-build: debug",
       "dependsOn": ["build"],
       "dockerBuild": {
-        "tag": "dotnetrazorblog:dev",
+        "tag": "cmsdotnetrazor:dev",
         "dockerfile": "${workspaceFolder}/Dockerfile.debug",
         "context": "${workspaceFolder}",
         "pull": true
       },
       "netCore": {
-        "appProject": "${workspaceFolder}/dotnet-razor-blog.csproj"
+        "appProject": "${workspaceFolder}/cms-dotnet-razor.csproj"
       }
     },
     {
@@ -56,13 +56,13 @@
       "label": "docker-build: release",
       "dependsOn": ["build"],
       "dockerBuild": {
-        "tag": "dotnetrazorblog:latest",
+        "tag": "cmsdotnetrazor:latest",
         "dockerfile": "${workspaceFolder}/Dockerfile",
         "context": "${workspaceFolder}",
         "pull": true
       },
       "netCore": {
-        "appProject": "${workspaceFolder}/dotnet-razor-blog.csproj"
+        "appProject": "${workspaceFolder}/cms-dotnet-razor.csproj"
       }
     },
     {
@@ -70,7 +70,7 @@
       "label": "docker-run: debug",
       "dependsOn": ["docker-build: debug"],
       "dockerRun": {
-        "containerName": "dotnet-razor-blog-debug",
+        "containerName": "cms-dotnet-razor-debug",
         "env": {
           "ASPNETCORE_ENVIRONMENT": "Development",
           "ASPNETCORE_URLS": "http://+:8080",
@@ -90,7 +90,7 @@
         ]
       },
       "netCore": {
-        "appProject": "${workspaceFolder}/dotnet-razor-blog.csproj",
+        "appProject": "${workspaceFolder}/cms-dotnet-razor.csproj",
         "enableDebugging": true
       }
     },
@@ -99,7 +99,7 @@
       "label": "docker-run: release",
       "dependsOn": ["docker-build: release"],
       "dockerRun": {
-        "containerName": "dotnet-razor-blog",
+        "containerName": "cms-dotnet-razor",
         "ports": [
           {
             "containerPort": 8080,
@@ -108,7 +108,7 @@
         ]
       },
       "netCore": {
-        "appProject": "${workspaceFolder}/dotnet-razor-blog.csproj"
+        "appProject": "${workspaceFolder}/cms-dotnet-razor.csproj"
       }
     },
     {

@@ -1,6 +1,6 @@
-﻿using dotnet_razor_blog.Models.Domain;
+﻿using cms_dotnet_razor.Models.Domain;
 
-namespace dotnet_razor_blog.Repositories
+namespace cms_dotnet_razor.Repositories
 {
     public interface IBlogPostRepository
     {

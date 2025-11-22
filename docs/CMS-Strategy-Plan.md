@@ -347,7 +347,7 @@ python manage.py runserver
 **Code Structure:**
 
 ```
-dotnet-razor-blog/
+cms-dotnet-razor/
 ├── Core/
 │   ├── CMS/
 │   │   ├── ContentTypes/

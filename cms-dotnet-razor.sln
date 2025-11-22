@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotnet-razor-blog", "dotnet-razor-blog.csproj", "{D44702AE-C151-408B-B8E5-D22B1DFE2247}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cms-dotnet-razor", "cms-dotnet-razor.csproj", "{D44702AE-C151-408B-B8E5-D22B1DFE2247}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

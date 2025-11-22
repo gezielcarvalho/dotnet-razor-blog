@@ -25,7 +25,7 @@ A modern blog application built with ASP.NET Core 8.0 and Razor Pages. This appl
 ## Project Structure
 
 ```
-dotnet-razor-blog/
+cms-dotnet-razor/
 ├── Data/
 │   └── AppDbContext.cs              # Database context
 ├── Models/
@@ -146,8 +146,8 @@ chmod +x scripts/migrate-db.sh
 #### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/gezielcarvalho/dotnet-razor-blog.git
-cd dotnet-razor-blog
+git clone https://github.com/gezielcarvalho/cms-dotnet-razor.git
+cd cms-dotnet-razor
 ```
 
 #### 2. Configure Database Connection
@@ -243,19 +243,19 @@ ConnectionStrings__DefaultConnection=Server=sqlserver;Database=BlogDb;User Id=sa
 
 ```bash
 # Build the production image
-docker build -t dotnet-razor-blog .
+docker build -t cms-dotnet-razor .
 
 # Build the debug image
-docker build -f Dockerfile.debug -t dotnet-razor-blog:debug .
+docker build -f Dockerfile.debug -t cms-dotnet-razor:debug .
 
 # Run the production container
-docker run -p 5151:8080 dotnet-razor-blog
+docker run -p 5151:8080 cms-dotnet-razor
 
 # View running containers
 docker ps
 
 # View logs
-docker logs dotnet-razor-blog
+docker logs cms-dotnet-razor
 
 # Stop and remove containers
 docker compose down -v

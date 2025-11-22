@@ -1,9 +1,9 @@
-using dotnet_razor_blog.Data;
-using dotnet_razor_blog.Models.Domain;
-using dotnet_razor_blog.Repositories;
+using cms_dotnet_razor.Data;
+using cms_dotnet_razor.Models.Domain;
+using cms_dotnet_razor.Repositories;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace dotnet_razor_blog.Pages.Admin.BlogPosts
+namespace cms_dotnet_razor.Pages.Admin.BlogPosts
 {
     public class ListModel(IBlogPostRepository repository) : PageModel
     {
